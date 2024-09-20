@@ -13,7 +13,7 @@ export default defineConfig({
     alias: [{ find: "@/", replacement: "/src/" }],
   },
   build: {
-    outDir: "textGenVideo", // 这里设置你的输出目录
+    outDir: "html", // 这里设置你的输出目录
     // 可以添加其他build配置选项
   },
 });

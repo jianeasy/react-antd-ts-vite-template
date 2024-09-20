@@ -1,0 +1,19 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+
+    .header {
+        height: 72px;
+        margin-top: 20px;
+    }
+
+    .loginform {
+        position: absolute;
+        left: 10%;
+        top: 30%;
+    }
+}
