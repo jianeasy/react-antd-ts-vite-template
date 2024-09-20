@@ -48,7 +48,9 @@ const SimpleForm = (props: {
 
   return (
     <div className={styles.simpleForm}>
-      <Button onClick={onAdd}>添加</Button>
+      <Button type="primary" onClick={onAdd}>
+        添加
+      </Button>
       <Form layout="inline">
         <Form.Item name={"keyword"}>
           <Input placeholder="请输入搜索内容" onChange={keywordChange}></Input>

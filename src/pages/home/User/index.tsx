@@ -11,7 +11,7 @@ const UserPage: React.FC = () => {
   const [form] = Form.useForm();
   const [editingCourse, setEditingCourse] = useState<Course | null>(null);
   const [storage] = useState(new LocalStorageManager("user"));
-
+  const [isEdit, setIsEdit] = useState(false);
   useEffect(() => {
     // 模拟从API获取数据
     const mockData: Course[] = [
@@ -54,6 +54,7 @@ const UserPage: React.FC = () => {
 
   const showModal = (course?: Course) => {
     if (course) {
+      setIsEdit(true);
       setEditingCourse(course);
       form.setFieldsValue(course);
     } else {
@@ -163,7 +164,10 @@ const UserPage: React.FC = () => {
         onOk={handleOk}
         okText="确认"
         cancelText="取消"
-        onCancel={() => setIsModalVisible(false)}
+        onCancel={() => {
+          setIsModalVisible(false);
+          setIsEdit(false);
+        }}
       >
         <Form form={form} layout="vertical">
           <Form.Item
@@ -173,7 +177,12 @@ const UserPage: React.FC = () => {
           >
             <Input placeholder="用户名" />
           </Form.Item>
-          <Form.Item name="password" label="密码" rules={[{ required: true }]}>
+          <Form.Item
+            hidden={isEdit}
+            name="password"
+            label="密码"
+            rules={[{ required: !isEdit }]}
+          >
             <Input placeholder="密码" />
           </Form.Item>
           <Form.Item name="role" label="角色" rules={[{ required: true }]}>

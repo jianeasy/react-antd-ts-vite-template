@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./index.module.scss";
 import { LocalStorageManager } from "@/utils";
+import { useLocation } from "react-router-dom";
 
 interface MenuItem {
   id: string;
@@ -12,21 +13,17 @@ interface SideMenuProps {
   items: MenuItem[];
   onItemClick: (item: MenuItem) => void;
   headerImage: string;
-  defaultActiveItem: MenuItem;
 }
 
 const SideMenu: React.FC<SideMenuProps> = ({
   items,
   onItemClick,
   headerImage,
-  defaultActiveItem,
 }) => {
-  const [selectedItem, setSelectedItem] = useState<string | null>(
-    defaultActiveItem.id
-  );
+  const { pathname } = useLocation();
+  const [selectedItem, setSelectedItem] = useState<string | null>(pathname);
   const [storage] = useState(new LocalStorageManager("userInfo"));
   const userInfo: any = storage.getAll()[0];
-
   const handleItemClick = (item: MenuItem) => {
     setSelectedItem(item.id);
     onItemClick(item);
