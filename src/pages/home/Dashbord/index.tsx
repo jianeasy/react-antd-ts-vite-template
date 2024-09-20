@@ -5,8 +5,8 @@ import Header from "@/components/Header";
 export default () => {
   return (
     <div className={styles.container}>
-      <Header title=""></Header>
-      <img style={{ height: "100%", width: "100%" }} src={image} />
+      <Header title="主页"></Header>
+      <img style={{ height: "calc(100% -100px)", width: "100%" }} src={image} />
     </div>
   );
 };

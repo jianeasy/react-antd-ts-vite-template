@@ -6,7 +6,7 @@ export default () => {
   return (
     <div className={styles.container}>
       <Header title="设置"></Header>
-      <img style={{ height: "100%", width: "100%" }} src={image} />
+      <img style={{ height: "calc(100% -100px)", width: "100%" }} src={image} />
     </div>
   );
 };
