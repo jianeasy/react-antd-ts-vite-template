@@ -1,4 +1,27 @@
-* {
-  padding: 0;
-  margin: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-100 text-gray-100 transition-colors duration-200;
+  }
+
+  .dark body {
+    @apply bg-background-dark text-dark;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-primary-light text-white rounded-lg hover:opacity-90 dark:bg-primary-dark;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-4;
+  }
+
+  .bg-background-light {
+    @apply bg-gray-100;
+  }
 }

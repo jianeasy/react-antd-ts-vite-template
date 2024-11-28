@@ -3,9 +3,10 @@
     width: 100vw;
     background-color: #fff;
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 20px;
+    overflow: hidden;
 }
 
 .leftBar {
@@ -16,4 +17,56 @@
 .content {
     height: 100%;
     width: 85%;
+}
+
+.renderItem {
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .renderItemTitle {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 4px;
+    }
+
+    .renderItemIcon {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .renderItemDesc {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 8px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .renderItemTags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+
+        div {
+            padding: 2px 8px;
+            background-color: #e6f4ff;
+            color: #1677ff;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+    }
 }

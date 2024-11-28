@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const req = axios.create({});
+const req = axios.create({
+  baseURL: import.meta.env.VITE_APP_API,
+});
 
 req.interceptors.response.use(
   (response) => {
