@@ -4,13 +4,17 @@ import "./App.css";
 import { RouterProvider } from "react-router-dom";
 import router from "@/router";
 import { ThemeProvider } from "@/theme";
+import { Provider } from "react-redux";
+import { store } from "@/store";
 
 function App() {
   return (
     <Fragment>
-      <ThemeProvider>
-        <RouterProvider router={router}></RouterProvider>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider>
+          <RouterProvider router={router}></RouterProvider>
+        </ThemeProvider>
+      </Provider>
     </Fragment>
   );
 }
