@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+
 const App: React.FC = () => {
   const { count } = useSelector((state) => {
     return state;
