@@ -16,4 +16,14 @@ export default defineConfig({
     outDir: "html", // 这里设置你的输出目录
     // 可以添加其他build配置选项
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "./src/styles/variables";`, // 在每个文件之前注入的内容
+        includePaths: [
+          './src/styles', // 指定搜索 @import 路径的目录
+        ],
+      },
+    },
+  },
 });
