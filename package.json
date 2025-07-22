@@ -1,5 +1,5 @@
 {
-  "name": "dianxinlearn",
+  "name": "jingdu-fe",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,12 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@lobehub/ui": "^1.153.8",
     "@reduxjs/toolkit": "^2.2.6",
     "antd": "^5.20.6",
     "axios": "^1.7.2",
     "classnames": "^2.5.1",
-    "dianxinlearn": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-layout-kit": "^1.9.0",

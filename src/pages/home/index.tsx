@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-
+import styles from "./index.module.scss";
 const App: React.FC = () => {
-  const { count } = useSelector((state) => {
-    return state;
-  });
+
   return (
-    <div className="h-screen w-screen bg-white flex justify-center items-start pt-5 overflow-hidden">
-      {count}
+    <div className={styles.container}>
+
     </div>
   );
 };
